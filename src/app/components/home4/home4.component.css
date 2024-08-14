@@ -1,0 +1,94 @@
+/* Fullscreen background image */
+.fullscreen-background {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    overflow: hidden;
+}
+
+.fullscreen-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: url('/public/home3.jpg') no-repeat center center; /* Update path as needed */
+    background-size: cover; /* Cover the entire area */
+    opacity: 0.5; /* Adjust opacity as needed */
+    z-index: -1; /* Place behind the text */
+}
+
+
+/* Keyframes for fade-in and slide-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Start lower and transparent */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at the final position */
+    }
+}
+
+/* Overlay text with hidden state initially */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent background for text */
+    border-radius: 8px;
+    opacity: 0; /* Start as invisible */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    max-width: 90%; /* Ensure text does not stretch too wide */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+
+.overlay-text h1 {
+    font-size: 2.5em; /* Adjust font size as needed */
+    margin: 0;
+}
+
+.overlay-text p {
+    font-size: 1.2em; /* Adjust font size as needed */
+    margin: 0.5em 0 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .overlay-text {
+        width: 55%;
+        padding: 0.8em;
+    }
+
+    .overlay-text h1 {
+        font-size: 1.5em; /* Reduce font size for smaller screens */
+    }
+
+    .overlay-text p {
+        font-size: 1em; /* Reduce font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay-text {
+        padding: 0.5em;
+        width: 55%;
+    }
+
+    .overlay-text h1 {
+        font-size: 1.5em; /* Further reduce font size for very small screens */
+    }
+
+    .overlay-text p {
+        font-size: 0.9em; /* Further reduce font size for very small screens */
+    }
+}

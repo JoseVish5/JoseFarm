@@ -1,0 +1,21 @@
+<header class="header" style="background-image: url(bg.png);">
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Logo" routerLink="/">
+    </div>
+    <div class="head">Jose Farm</div>
+    <div class="navigation">
+      <ul class="nav-links" [ngClass]="{'active': isMenuOpen}">
+        <li><a (click)="closeMenu()" routerLink="/">Home</a></li>
+        <li><a (click)="closeMenu()" routerLink="/products">Products</a></li>
+        <li><a (click)="closeMenu()" routerLink="/about">About Us</a></li>
+        <li><a (click)="closeMenu()" routerLink="/contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" (click)="toggleMenu()" [ngClass]="{'active': isMenuOpen}">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</header>

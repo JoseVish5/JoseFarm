@@ -1,0 +1,143 @@
+.home {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 0;
+  position: relative; /* Ensure the layout adjusts properly */
+  /* position: relative;
+  width: 100%;
+  height: 100vh; 
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; */
+}
+
+.home-content {
+  max-width: 50%;
+  padding: 0 20px; /* Add some padding for smaller screens */
+}
+
+/* Base styles for the button */
+.btn {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #4caf50; /* Primary background color */
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Hover effect */
+.btn:hover, .btn:focus {
+  background-color: #064008; /* Darker background color on hover */
+  color: #ffffff; /* Ensure text color remains readable */
+  border-color: #78c67a; /* Change border color on hover */
+}
+
+
+.home-content h1 {
+  font-size: 2.5rem;
+  color: #4caf50;
+  margin-bottom: 20px;
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #555;
+  line-height: 1.6;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); /* Starts slightly off to the right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Ends in the original position */
+  }
+}
+
+.home-image img {
+  margin-top: -235px;
+  margin-left: 600px;
+  width: 50%;
+  animation: slideIn 1.5s ease-out; /* Animation applied */
+}
+
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and mobile devices (<= 1024px) */
+@media (max-width: 1024px) {
+  .home {
+    flex-direction: column; /* Stack content and image vertically */
+    align-items: center;
+    padding: 50px 0; /* Reduce padding for smaller screens */
+  }
+
+  .home-content {
+    max-width: 90%;
+    text-align: center; 
+  }
+
+  .home-image img {
+    max-width: 100%;
+    margin-left: 200px;
+    margin-top: 6px;
+    animation: slideIn 1.5s ease-out; /* Animation applied */
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(100px); /* Starts slightly off to the right */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* Ends in the original position */
+    }
+  }
+}
+
+/* For mobile devices (<= 768px) */
+@media (max-width: 768px) {
+
+  /* .home {
+    margin-top: -30px;
+  } */
+
+  .home-content h1 {
+    font-size: 2rem; /* Smaller font size for mobile */
+  }
+
+  .home-content p {
+    font-size: 1rem; /* Smaller font size for mobile */
+  }
+
+  .home-image img {
+    margin-left: -5px;
+    width: 100%;
+    margin-top: 17px;
+    animation: slideIn 1.5s ease-out; /* Animation applied */
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(100px); /* Starts slightly off to the right */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* Ends in the original position */
+    }
+  }
+}
+

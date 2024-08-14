@@ -1,0 +1,17 @@
+<h1>Our Farm Products</h1>
+<div class="scroll-container" #scrollContainer>
+  <div class="fixed-image-container">
+    <img [src]="currentImage" class="fixed-image" alt="Current Image"/>
+  </div>
+  <div class="scroll-content">
+    <div *ngFor="let item of items; let i = index" class="scroll-item" [id]="'item-' + i">
+      <div class="scroll-text">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

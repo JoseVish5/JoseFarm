@@ -1,0 +1,214 @@
+/* Base Styles */
+.scroll-container {
+  margin-top: -135px;
+  margin-bottom: 129px;
+  display: flex;
+  height: 95vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.headline {
+  color: black;
+  font-weight: 700;
+  font-family: "Montserrat", Arial, sans-serif;
+  margin-bottom: -40px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.fixed-image-container {
+  position: absolute;
+  height: 80%;
+}
+
+ h1 {
+  margin-top: 120px;
+  font-size: 2.5rem;
+  color: #4caf50;
+  margin-bottom: -90px;
+  text-align: center;
+}
+
+.fixed-image {
+  margin-left: 75px;
+  margin-top: 210px;
+  margin-bottom: 10px;
+  width: 775px;
+  height: 500px;
+  object-fit: cover; /* Ensures image covers the container without distortion */
+  border-radius: 10px; /* Slightly rounded corners */
+  transition: transform 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
+  transform-style: preserve-3d;
+  animation: float 5s ease-in-out infinite; /* Floating animation */
+}
+
+/* 3D Reflection Effect */
+.fixed-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.2), transparent);
+  transform: scaleY(-1);
+  opacity: 0.5;
+  pointer-events: none; /* Prevents reflection from being interactive */
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0); /* Start and end at the same position */
+  }
+  50% {
+    transform: translateY(-10px); /* Slight upward movement */
+  }
+}
+
+.fixed-image-container:hover .fixed-image {
+  transform: rotateX(10deg) rotateY(10deg) scale(1.05); /* Subtle tilt and zoom */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.scroll-content {
+  flex: 1 0 1%;
+  margin-left: 70%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.scroll-item {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-text {
+  font-family: cursive;
+  font-size: 1.1rem;
+  margin-left: -110px;
+}
+
+.scroll-text h2 {
+color: #4caf50;
+}
+
+/* Media Queries */
+
+/* Mobile Phones (up to 599px) */
+@media (max-width: 430px) {
+  .scroll-container {
+  margin-top: -20px;
+    flex-direction: column;
+  }
+
+  h1{
+    margin-top: 38px;
+    margin-bottom: 17px;
+    font-size: 2rem;
+  }
+
+  .fixed-image-container {
+    position: absolute;
+    margin: 20px 0;
+    height: auto;
+  }
+
+  .fixed-image {
+    margin-left: 8px;
+    margin-top: 13px;
+    max-width: 96%;
+    max-height: 44vh;
+  }
+
+  .scroll-content {
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .scroll-text {
+    margin-left: -6px;
+    margin-top: 295px;
+    text-align: center;
+    width: 90%;
+  }
+}
+
+@media (max-width: 599px) {
+  .scroll-container {
+  margin-top: -20px;
+    flex-direction: column;
+  }
+
+  .fixed-image-container {
+    position: absolute;
+    margin: 20px 0;
+    height: auto;
+  }
+
+  .fixed-image {
+    margin-left: 12px;
+    margin-top: 5px;
+    max-width: 95%;
+    max-height: 44vh;
+  }
+
+  .scroll-content {
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .scroll-text {
+    margin-left: -6px;
+    margin-top: 295px;
+    text-align: center;
+    width: 90%;
+  }
+}
+
+/* Tablets (600px to 1024px) */
+@media (min-width: 600px) and (max-width: 1024px) and (max-width: 1366px)  {
+  .scroll-container {
+  margin-top: -20px;
+    flex-direction: column;
+  }
+
+  .fixed-image-container {
+    position: absolute;
+    margin: 20px 0;
+    height: auto;
+  }
+
+  h1{
+    margin-top: 70px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .fixed-image {
+    margin-top: 15px;
+    margin-left: 122px;
+    max-width: 95%;
+    max-height: 68vh;
+  }
+
+  .scroll-content {
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .scroll-text {
+    font-size: 2rem;
+    margin-left: -6px;
+    margin-top: 295px;
+    text-align: center;
+    width: 60%;
+  }
+}
